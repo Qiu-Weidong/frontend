@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 const routes = [
     {
         path: '/',
-        redirect: '/dashboard'
+        redirect: '/permission'
     }, {
         path: "/",
         name: "Home",
@@ -17,6 +17,34 @@ const routes = [
                     title: '系统首页'
                 },
                 component: () => import ( /* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
+            },{
+                path: "/coordinate",
+                name: "Coordinate",
+                meta: {
+                    title: '空间坐标变化'
+                },
+                component: () => import("../views/Coordinate.vue")
+            }, {
+                path: "/editpermission",
+                name: "editpermission",
+                meta: {
+                    title: "修改权限"
+                },
+                component: () => import(/* webpackChunkName: "editpermission" */ "../views/EditPermission.vue")
+            },{
+                path: "/cctv",
+                name: "CCTV",
+                meta: {
+                    title: "CCTV"
+                },
+                component: () => import("../views/CCTV.vue")
+            },{
+                path: "/cctvmulti",
+                name: "CCTVMulti",
+                meta: {
+                    title: "CCTV"
+                },
+                component: () => import("../views/CCTVMulti.vue")
             }, {
                 path: "/table",
                 name: "basetable",

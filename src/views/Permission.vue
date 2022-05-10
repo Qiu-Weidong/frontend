@@ -58,42 +58,46 @@
           </el-col>
         </el-row>
         <el-card shadow="hover" style="height: 80%">
-        <template #header>
-          <div class="clearfix">
-            <span>用户列表</span>
-            <el-button style="float: right; padding: 3px 0" type="text"
-              >添加</el-button
-            >
-          </div>
-        </template>
+          <template #header>
+            <div class="clearfix">
+              <span>用户列表</span>
+              <el-button style="float: right; padding: 3px 0" type="text" @click="newUser"
+                >添加</el-button
+              >
+            </div>
+          </template>
 
-        <el-table :show-header="true" :data="userList" style="width: 100%">
-          <el-table-column
-            prop="name"
-            label="姓名"
-            width="120"
-          ></el-table-column>
-          <el-table-column
-            prop="date"
-            label="注册日期"
-            width="180"
-          ></el-table-column>
-          <el-table-column
-            prop="type"
-            label="类型"
-            width="180"
-          ></el-table-column>
-          <el-table-column prop="id" label="编号" width="180"></el-table-column>
-          <el-table-column fixed="right" label="操作" width="100">
-            <el-button type="text" size="small">编辑权限</el-button>
-          </el-table-column>
-        </el-table>
-      </el-card>
+          <el-table :show-header="true" :data="userList" style="width: 100%">
+            <el-table-column
+              prop="name"
+              label="姓名"
+              width="120"
+            ></el-table-column>
+            <el-table-column
+              prop="date"
+              label="注册日期"
+              width="180"
+            ></el-table-column>
+            <el-table-column
+              prop="type"
+              label="类型"
+              width="180"
+            ></el-table-column>
+            <el-table-column
+              prop="id"
+              label="编号"
+              width="180"
+            ></el-table-column>
+            <el-table-column fixed="right" label="操作" width="100">
+              <el-button type="text" size="small" @click="editpermission">编辑权限</el-button>
+            </el-table-column>
+          </el-table>
+        </el-card>
       </el-col>
     </el-row>
     <!-- 用户列表 -->
     <!-- <el-row :gutter="20" style="width: 100%"> -->
-      
+    
   </div>
 </template>
 
@@ -117,6 +121,18 @@ export default {
       userList,
     };
   },
+
+  methods: {
+    newUser() {
+      this.$router.push('/user');
+    },
+
+    editpermission() {
+      // console.log('fuck!!!!!!!!');
+      this.$router.push('/editpermission');
+    }
+
+  }
 };
 </script>
 
