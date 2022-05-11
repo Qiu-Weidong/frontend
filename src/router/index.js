@@ -24,6 +24,20 @@ const routes = [
                     title: '空间坐标变化'
                 },
                 component: () => import("../views/Coordinate.vue")
+            },{
+                path: "/video",
+                name: "Video",
+                meta: {
+                    title: "视频"
+                },
+                component: () => import("../views/Video.vue")
+            },{
+                path: "/videolist",
+                name: "VideoList",
+                meta: {
+                    title: "历史数据"
+                },
+                component: () => import("../views/VideoList.vue")
             }, {
                 path: "/editpermission",
                 name: "editpermission",

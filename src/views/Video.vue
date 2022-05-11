@@ -1,20 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="6">
-        <el-select v-model="value" placeholder="请选择摄像头">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          >
-          </el-option>
-        </el-select>
-      </el-col>
-      <el-col :span="6">
-        <el-button @click="multi">分频显示</el-button>
-      </el-col>
+    <el-button @click="multi">上传视频</el-button>
     </el-row>
 
     <el-row>
@@ -37,42 +24,18 @@
         <el-table-column prop="address2" label="移动后坐标"> </el-table-column>
       </el-table>
     </el-row>
-    <el-row>
-      <!-- <el-col :offset="16"> -->
-        <el-button @click="more">更多</el-button>
-      <!-- </el-col> -->
-    </el-row>
+    <!-- <el-row>
+      <el-button>更多</el-button>
+    </el-row> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: "CCTV",
+  name: "Video",
   setup() {
     return {
       url: "https://cdn.jsdelivr.net/gh/Qiu-Weidong/pictures/images/毕设/微信图片_20220504162039.jpg",
-      options: [
-        {
-          value: "选项1",
-          label: "摄像机1",
-        },
-        {
-          value: "选项2",
-          label: "摄像机2",
-        },
-        {
-          value: "选项3",
-          label: "摄像机3",
-        },
-        {
-          value: "选项4",
-          label: "摄像机4",
-        },
-        {
-          value: "选项5",
-          label: "摄像机5",
-        },
-      ],
       tableData: [
         {
           date: "2022-5-10",
@@ -100,16 +63,6 @@ export default {
         },
       ],
     };
-  },
-
-  methods: {
-    multi() {
-      this.$router.push("/CCTVMulti");
-    },
-
-    more() {
-      this.$router.push("/VideoList");
-    },
   },
 };
 </script>
