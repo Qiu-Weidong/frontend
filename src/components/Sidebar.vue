@@ -45,10 +45,10 @@ export default {
                 subs: [
                     { index: '3', title: '数据源选择',  subs: [
                         { index: '/cctv', title: 'CCTV' },
-                        { index: '/editor', title: '视频' }
+                        { index: '/video', title: '视频' }
                     ]},
                     { index: '/coordinate', title: '空间坐标变化' },
-                    { index: '/upload', title: '坐标原点设置' }
+                    { index: '/', title: '坐标原点设置' }
                 ]
             },
             {
