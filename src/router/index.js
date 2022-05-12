@@ -118,7 +118,7 @@ const routes = [
                 component: () => import ( /* webpackChunkName: "i18n" */ "../views/I18n.vue")
             }, {
                 path: "/upload",
-                name: "upload",
+                name: "upload1",
                 meta: {
                     title: '上传插件'
                 },
@@ -158,6 +158,13 @@ const routes = [
                     title: '富文本编辑器'
                 },
                 component: () => import (/* webpackChunkName: "editor" */ '../views/Editor.vue')
+            }, {
+                path: '/newmodel',
+                name: 'NewModel',
+                meta: {
+                    title: '训练新的模型'
+                },
+                component: () => import (/* webpackChunkName: "editor" */ '../views/NewModel.vue')
             }
         ]
     }, {
