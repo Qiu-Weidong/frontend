@@ -22,7 +22,7 @@
 
         <el-table-column fixed="right" label="操作" width="120">
           <!-- <template slot-scope="scope"> -->
-            <el-button type="text" size="small"> 详情 </el-button>
+            <el-button type="text" size="small" @click="detail"> 详情 </el-button>
           <!-- </template> -->
         </el-table-column>
       </el-table>
@@ -88,6 +88,12 @@ export default {
       ],
     };
   },
+
+  methods: {
+    detail() {
+      this.$router.push('videodetail');
+    }
+  }
 };
 </script>
 

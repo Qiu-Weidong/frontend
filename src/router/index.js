@@ -60,6 +60,13 @@ const routes = [
                 },
                 component: () => import("../views/CCTVMulti.vue")
             }, {
+                path: "/videodetail",
+                name: "VideoDetail",
+                meta: {
+                    title: "视频详情"
+                },
+                component: () => import("../views/VideoDetail.vue")
+            }, {
                 path: "/table",
                 name: "basetable",
                 meta: {
