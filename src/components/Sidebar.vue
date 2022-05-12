@@ -56,6 +56,7 @@ export default {
                 index: "1",
                 title: "目标检测",
                 subs: [
+                    { index: '/newmodel', title: '训练新的模型'},
                     { index: '4', title: '训练模型选择', subs: [
                         { index: '/borderDet', title: 'borderDet' },
                         { index: '/borderDet2', title: '模型2' },
