@@ -41,27 +41,25 @@ export default {
             {
                 icon: "el-icon-lx-home",
                 index: "0",
-                title: "空间定位",
+                title: "现场空间定位",
                 subs: [
                     { index: '3', title: '数据源选择',  subs: [
                         { index: '/cctv', title: 'CCTV' },
                         { index: '/video', title: '视频' }
                     ]},
                     { index: '/coordinate', title: '空间坐标变化' },
-                    { index: '/', title: '坐标原点设置' }
+                    { index: '/coordinateoriginsetting', title: '坐标原点设置' }
                 ]
             },
             {
                 icon: "el-icon-lx-cascades",
                 index: "1",
-                title: "目标检测",
+                title: "前期模型训练",
                 subs: [
-                    { index: '/newmodel', title: '训练新的模型'},
-                    { index: '4', title: '训练模型选择', subs: [
-                        { index: '/borderDet', title: 'borderDet' },
-                        { index: '/borderDet2', title: '模型2' },
-                        { index: '/borderDet3', title: '模型3' }
-                    ] }
+                    { index: '/newmodel1', title: '数据采集'},
+                    { index: '/newmodel2', title: '标注工作'},
+                    { index: '/newmodel', title: '训练模型选择' },
+                    { index: '/newmodel4', title: '模型训练及可视化' }
                 ]
             },
 
@@ -100,7 +98,7 @@ export default {
 }
 .sidebar-el-menu:not(.el-menu--collapse) {
     /* width: 250px; */
-    width: 250px;
+    width: 300px;
 }
 .sidebar > ul {
     height: 100%;

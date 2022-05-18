@@ -39,6 +39,13 @@ const routes = [
                 },
                 component: () => import("../views/VideoList.vue")
             }, {
+                path: "/coordinateoriginsetting",
+                name: "CoordinateOriginSetting",
+                meta: {
+                    title: "坐标原点设置"
+                },
+                component: () => import("../views/CoordinateOriginSetting.vue")
+            }, {
                 path: "/editpermission",
                 name: "editpermission",
                 meta: {

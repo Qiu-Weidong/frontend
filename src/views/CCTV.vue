@@ -45,9 +45,9 @@
       </el-table>
     </el-row>
     <el-row>
-      <!-- <el-col :offset="16"> -->
+
         <el-button @click="more">更多</el-button>
-      <!-- </el-col> -->
+
     </el-row>
   </div>
 </template>
