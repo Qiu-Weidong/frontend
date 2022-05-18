@@ -1,7 +1,19 @@
 <template>
   <div>
     <el-row>
-    <el-button @click="multi">上传视频</el-button>
+    <el-button @click="upload">上传视频</el-button>
+    <el-dialog v-model="dialogVisible" width="30%">
+      <el-upload style="margin-left: 20px;" class="upload-demo" drag action="http://jsonplaceholder.typicode.com/api/posts/" multiple>
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">
+                    将文件拖到此处，或
+                    <em>点击上传</em>
+                </div>
+                <!-- <template #tip>
+                    <div class="el-upload__tip">上传图片的zip压缩包</div>
+                </template> -->
+            </el-upload>
+    </el-dialog>
     </el-row>
 
     <el-row>
@@ -37,10 +49,15 @@
 </template>
 
 <script>
+import {ref} from 'vue'
+
 export default {
   name: "Video",
   setup() {
+    const dialogVisible = ref(false);
+
     return {
+      dialogVisible,
       url: "https://cdn.jsdelivr.net/gh/Qiu-Weidong/pictures/images/毕设/微信图片_20220504162039.jpg",
       tableData: [
         {
@@ -70,6 +87,12 @@ export default {
       ],
     };
   },
+  methods: {
+    upload() {
+      console.log('上传视频');
+      this.dialogVisible = true;
+    }
+  }
 };
 </script>
 
