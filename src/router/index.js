@@ -165,6 +165,13 @@ const routes = [
                     title: '训练新的模型'
                 },
                 component: () => import (/* webpackChunkName: "editor" */ '../views/NewModel.vue')
+            }, {
+                path: '/videotest',
+                name: 'VideoTest',
+                meta: {
+                    title: '视频测试'
+                },
+                component: () => import("../views/VideoTest.vue")
             }
         ]
     }, {

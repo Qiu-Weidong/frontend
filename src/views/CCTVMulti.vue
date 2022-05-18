@@ -19,16 +19,40 @@
 
     <el-row :gutter="20">
       <el-col :span="12">
-        <el-image style="width: 100%" :src="url" fit="contain"></el-image>
+        <video id="mse" autoplay="true" playsinline controls="controls" style="width:100%">
+      <source
+        src="../assets/img/video.mp4"
+        type="video/mp4"
+      />
+      你的浏览器不支持Video标签
+    </video>
       </el-col>
       <el-col :span="12">
-        <el-image style="width: 100%" :src="url" fit="contain"></el-image>
+        <video id="mse" autoplay="true" playsinline controls="controls" style="width:100%">
+      <source
+        src="../assets/img/video.mp4"
+        type="video/mp4"
+      />
+      你的浏览器不支持Video标签
+    </video>
       </el-col>
       <el-col :span="12">
-        <el-image style="width: 100%" :src="url" fit="contain"></el-image>
+        <video id="mse" autoplay="true" playsinline controls="controls" style="width:100%">
+      <source
+        src="../assets/img/video.mp4"
+        type="video/mp4"
+      />
+      你的浏览器不支持Video标签
+    </video>
       </el-col>
       <el-col :span="12">
-        <el-image style="width: 100%" :src="url" fit="contain"></el-image>
+        <video id="mse" autoplay="true" playsinline controls="controls" style="width:100%">
+      <source
+        src="../assets/img/video.mp4"
+        type="video/mp4"
+      />
+      你的浏览器不支持Video标签
+    </video>
       </el-col>
     </el-row>
 
