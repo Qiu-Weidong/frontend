@@ -27,7 +27,13 @@
       </video>
       </el-col>
       <el-col :span="8">
-      文字说明
+      <el-card class="box-card">
+          <!-- <div v-for="o in 4" :key="o" class="text item">
+            {{ "列表内容 " + o }}
+          </div> -->
+          <h1>说明</h1>
+          左侧是一条视频数据。下方的表格是这条视频中的相关报警数据。点击对应的条目可以查看目标移动的那十秒钟的视频。
+        </el-card>
       </el-col>
     </el-row>
 
@@ -113,4 +119,9 @@ export default {
 </script>
 
 <style>
+.box-card {
+  /* width: 480px; */
+  height: 90%;
+  margin: 5% 5% 5% 5%;
+}
 </style>

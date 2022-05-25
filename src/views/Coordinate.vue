@@ -17,18 +17,24 @@
     <el-row>
       <el-col :span="16">
         <video
-        id="mse"
-        autoplay="true"
-        playsinline
-        controls="controls"
-        style="width: 100%"
-      >
-        <source src="../assets/img/video.mp4" type="video/mp4" />
-        你的浏览器不支持Video标签
-      </video>
+          id="mse"
+          autoplay="true"
+          playsinline
+          controls="controls"
+          style="width: 100%"
+        >
+          <source src="../assets/img/video.mp4" type="video/mp4" />
+          你的浏览器不支持Video标签
+        </video>
       </el-col>
       <el-col :span="8">
-      文字说明
+        <el-card class="box-card">
+          <!-- <div v-for="o in 4" :key="o" class="text item">
+            {{ "列表内容 " + o }}
+          </div> -->
+          <h1>说明</h1>
+          左侧是一条视频数据。下方的表格展示了对视频中的目标进行识别和定位的过程，展示了坐标的变换过程。
+        </el-card>
       </el-col>
     </el-row>
 
@@ -41,15 +47,16 @@
       <el-table :data="tableData" style="width: 100%">
         <el-table-column prop="id" label="物体id" width="180">
         </el-table-column>
-        
+
         <el-table-column prop="coordinate1" label="像素坐标/像素" width="180">
         </el-table-column>
         <el-table-column prop="coordinate2" label="图像坐标/米" width="180">
         </el-table-column>
-        
+
         <el-table-column prop="coordinate3" label="相机坐标/米" width="180">
         </el-table-column>
-        <el-table-column prop="coordinate4" label="世界坐标/米"> </el-table-column>
+        <el-table-column prop="coordinate4" label="世界坐标/米">
+        </el-table-column>
       </el-table>
     </el-row>
     <!-- <el-row>
@@ -128,4 +135,9 @@ export default {
 </script>
 
 <style>
+.box-card {
+  /* width: 480px; */
+  height: 90%;
+  margin: 5% 5% 5% 5%;
+}
 </style>

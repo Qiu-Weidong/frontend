@@ -20,20 +20,25 @@
     <el-row>
       <el-col :span="16">
         <video
-        id="mse"
-        autoplay="true"
-        playsinline
-        controls="controls"
-        style="width: 100%"
-      >
-        <source src="../assets/img/video.mp4" type="video/mp4" />
-        你的浏览器不支持Video标签
-      </video>
+          id="mse"
+          autoplay="true"
+          playsinline
+          controls="controls"
+          style="width: 100%"
+        >
+          <source src="../assets/img/video.mp4" type="video/mp4" />
+          你的浏览器不支持Video标签
+        </video>
       </el-col>
       <el-col :span="8">
-      文字说明
+        <el-card class="box-card">
+          <!-- <div v-for="o in 4" :key="o" class="text item">
+            {{ "列表内容 " + o }}
+          </div> -->
+          <h1>说明</h1>
+          左侧的视频是CCTV实时监控视频。下方的表格是目标移动的报警数据。
+        </el-card>
       </el-col>
-      
     </el-row>
 
     <!-- <el-row v-if="multi" >
@@ -43,15 +48,15 @@
 
     <el-row>
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="date" label="日期"  width="180">
+        <el-table-column prop="date" label="日期" width="180">
         </el-table-column>
-        <el-table-column prop="time" label="时间"  width="180"></el-table-column>
-        <el-table-column prop="camera" label="所属摄像头"  width="180">
+        <el-table-column prop="time" label="时间" width="180"></el-table-column>
+        <el-table-column prop="camera" label="所属摄像头" width="180">
         </el-table-column>
 
-        <el-table-column prop="id" label="物体id"  width="180">
+        <el-table-column prop="id" label="物体id" width="180">
         </el-table-column>
-        <el-table-column prop="address1" label="移动前坐标/米"  width="180">
+        <el-table-column prop="address1" label="移动前坐标/米" width="180">
         </el-table-column>
         <el-table-column prop="address2" label="移动后坐标/米">
         </el-table-column>
@@ -141,4 +146,17 @@ export default {
 </script>
 
 <style>
+.text {
+  font-size: 14px;
+}
+
+.item {
+  padding: 18px 0;
+}
+
+.box-card {
+  /* width: 480px; */
+  height: 90%;
+  margin: 5% 5% 5% 5%;
+}
 </style>
