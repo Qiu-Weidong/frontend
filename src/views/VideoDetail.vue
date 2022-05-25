@@ -14,7 +14,8 @@
     </el-row>
 
     <el-row>
-      <video
+      <el-col :span="16">
+        <video
         id="mse"
         autoplay="true"
         playsinline
@@ -24,6 +25,10 @@
         <source src="../assets/img/video.mp4" type="video/mp4" />
         你的浏览器不支持Video标签
       </video>
+      </el-col>
+      <el-col :span="8">
+      文字说明
+      </el-col>
     </el-row>
 
     <!-- <el-row v-if="multi" >
