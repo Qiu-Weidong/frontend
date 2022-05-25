@@ -18,14 +18,16 @@
     </el-row>
 
     <el-row>
-      <video id="mse" autoplay="true" playsinline controls="controls" style="width:100%">
-      <source
-        src="../assets/img/video.mp4"
-        type="video/mp4"
-      />
-      你的浏览器不支持Video标签
-    </video>
-
+      <video
+        id="mse"
+        autoplay="true"
+        playsinline
+        controls="controls"
+        style="width: 100%"
+      >
+        <source src="../assets/img/video.mp4" type="video/mp4" />
+        你的浏览器不支持Video标签
+      </video>
     </el-row>
 
     <!-- <el-row v-if="multi" >
@@ -35,19 +37,22 @@
 
     <el-row>
       <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="date" label="日期" width="240">
+        <el-table-column prop="date" label="日期"  width="180">
         </el-table-column>
-        <el-table-column prop="id" label="物体id" width="240">
+        <el-table-column prop="time" label="时间"  width="180"></el-table-column>
+        <el-table-column prop="camera" label="所属摄像头"  width="180">
         </el-table-column>
-        <el-table-column prop="address1" label="移动前坐标" width="240">
+
+        <el-table-column prop="id" label="物体id"  width="180">
         </el-table-column>
-        <el-table-column prop="address2" label="移动后坐标"> </el-table-column>
+        <el-table-column prop="address1" label="移动前坐标/米"  width="180">
+        </el-table-column>
+        <el-table-column prop="address2" label="移动后坐标/米">
+        </el-table-column>
       </el-table>
     </el-row>
     <el-row>
-
-        <el-button @click="more">更多</el-button>
-
+      <el-button @click="more">更多</el-button>
     </el-row>
   </div>
 </template>
@@ -83,27 +88,35 @@ export default {
       tableData: [
         {
           date: "2022-5-10",
+          time: "20:35",
           id: "椅子_1",
           address1: "(123,456,789)",
           address2: "(123, 123,123)",
+          camera: "摄像头1",
         },
         {
           date: "2022-4-17",
+          time: "20:35",
           id: "广告牌_2",
           address1: "(12,13,14)",
           address2: "(17, 23, 90)",
+          camera: "摄像头4",
         },
         {
           date: "2022-3-12",
+          time: "20:35",
           id: "椅子_1",
           address1: "(14, 231, 89)",
           address2: "(132,32,56)",
+          camera: "摄像头2",
         },
         {
           date: "2022-1-1",
+          time: "20:35",
           id: "椅子_4",
           address1: "(14, 98, 45)",
           address2: "(92, 91, 78)",
+          camera: "摄像头1",
         },
       ],
     };

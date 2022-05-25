@@ -45,7 +45,7 @@ export default {
                 subs: [
                     { index: '3', title: '数据源选择',  subs: [
                         { index: '/cctv', title: 'CCTV' },
-                        { index: '/video', title: '视频' }
+                        { index: '/videolist', title: '视频' }
                     ]},
                     { index: '/coordinate', title: '空间坐标变化' },
                     { index: '/coordinateoriginsetting', title: '坐标原点设置' }
@@ -92,6 +92,7 @@ export default {
     top: 70px;
     bottom: 0;
     overflow-y: scroll;
+    /* background-color: #195FFF; */
 }
 .sidebar::-webkit-scrollbar {
     width: 0;
