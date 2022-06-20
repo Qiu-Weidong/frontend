@@ -17,7 +17,14 @@ const routes = [
                     title: '系统首页'
                 },
                 component: () => import ( /* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
-            },{
+            }, {
+                path: "/introduction",
+                name: "introduction",
+                meta: {
+                    title: '公司介绍'
+                },
+                component: () => import("../views/Introduction.vue")
+            }, {
                 path: "/coordinate",
                 name: "Coordinate",
                 meta: {
