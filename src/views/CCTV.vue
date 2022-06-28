@@ -2,7 +2,7 @@
   <div>
     <el-row>
       <el-col :span="6">
-        <el-select v-model="value" placeholder="请选择摄像头">
+        <el-select v-model="value" placeholder="请选择摄像头" >
           <el-option
             v-for="item in options"
             :key="item.value"

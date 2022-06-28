@@ -1,9 +1,9 @@
 <template>
   <div>
-    <el-dialog v-model="dialogVisible" width="70%">
+    <el-dialog v-model="dialogVisible" width="70%" title="发生移动的那段视频">
       <video id="mse" autoplay="true" playsinline controls="controls" style="width:100%">
       <source
-        src="../assets/img/video.mp4"
+        src="../assets/img/video4.mp4"
         type="video/mp4"
       />
       你的浏览器不支持Video标签
