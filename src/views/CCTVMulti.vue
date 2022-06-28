@@ -26,7 +26,7 @@
             controls="controls"
             style="width: 100%"
           >
-            <source src="../assets/img/video.mp4" type="video/mp4" />
+            <source src="../assets/img/video2.mp4" type="video/mp4" />
             你的浏览器不支持Video标签
           </video>
         </el-raw>
@@ -51,7 +51,7 @@
             controls="controls"
             style="width: 100%"
           >
-            <source src="../assets/img/video.mp4" type="video/mp4" />
+            <source src="../assets/img/video3.mp4" type="video/mp4" />
             你的浏览器不支持Video标签
           </video>
         </el-raw>
@@ -76,7 +76,7 @@
             controls="controls"
             style="width: 100%"
           >
-            <source src="../assets/img/video.mp4" type="video/mp4" />
+            <source src="../assets/img/video4.mp4" type="video/mp4" />
             你的浏览器不支持Video标签
           </video>
         </el-raw>
@@ -101,7 +101,7 @@
             controls="controls"
             style="width: 100%"
           >
-            <source src="../assets/img/video.mp4" type="video/mp4" />
+            <source src="../assets/img/video1.mp4" type="video/mp4" />
             你的浏览器不支持Video标签
           </video>
         </el-raw>
