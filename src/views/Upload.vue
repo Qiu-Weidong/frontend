@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="container">
-            <el-upload style="margin-left: 20px;" class="upload-demo" drag action="http://jsonplaceholder.typicode.com/api/posts/" multiple>
+            <el-upload style="margin-left: 20px; width: 100%;" class="upload-demo" drag action="http://jsonplaceholder.typicode.com/api/posts/" multiple>
                 <i class="el-icon-upload"></i>
                 <div class="el-upload__text">
                     将文件拖到此处，或

@@ -186,7 +186,28 @@ const routes = [
                     title: '视频测试'
                 },
                 component: () => import("../views/VideoTest.vue")
-            }
+            }, {
+                path: '/ad',
+                name: 'Advertisement',
+                meta: {
+                    title: '产品介绍'
+                },
+                component: () => import("../views/Advertisement.vue")
+            }, {
+                path: '/datacollection',
+                name: 'Datacollection',
+                meta: {
+                    title: '数据采集'
+                },
+                component: () => import("../views/DataCollection.vue")
+            }, {
+                path: '/xmlcollection',
+                name: 'XMLCollection',
+                meta: {
+                    title: '标注工作'
+                },
+                component: () => import("../views/XMLCollection.vue")
+            },
         ]
     }, {
         path: "/login",

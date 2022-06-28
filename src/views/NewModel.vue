@@ -5,7 +5,6 @@
         训练新的模型
       </div>
       <el-button type="primary" round style="height:30px;margin-top: 5px; margin-left: 10px;" @click="dialogVisible = true">训练数据设置</el-button>
-      <el-button type="info" round style="height:30px;margin-top: 5px; margin-left: 10px;">当前模型详情</el-button>
     </el-row>
     <el-row>
       <el-col :span="6">
@@ -16,15 +15,15 @@
     </el-row>
     <el-row style="margin-top: 20px;">
       <el-table :data="tableData1" stripe border style="width: 50%; font-size: 18px;">
-        <el-table-column prop="id" label="类别" width="345">
+        <el-table-column prop="id" label="类别" width="335">
         </el-table-column>
-        <el-table-column prop="date" label="精度（AP）" width="345">
+        <el-table-column prop="date" label="精度（AP）" width="335">
         </el-table-column>
       </el-table>
       <el-table :data="tableData2" stripe border style="width: 50%; font-size: 18px;">
-        <el-table-column prop="id" label="类别" width="345">
+        <el-table-column prop="id" label="类别" width="335">
         </el-table-column>
-        <el-table-column prop="date" label="精度（AP）" width="345">
+        <el-table-column prop="date" label="精度（AP）" width="335">
         </el-table-column>
       </el-table>
     </el-row>
@@ -62,15 +61,15 @@
     </el-row>
     <el-row style="margin-top: 20px">
       <el-table :data="tableData3" stripe border style="width: 100%; font-size: 18px;">
-        <el-table-column prop="id" label="模型名称" width="408">
+        <el-table-column prop="id" label="模型名称" width="390">
         </el-table-column>
-        <el-table-column prop="date" label="训练开始日期" width="408">
+        <el-table-column prop="date" label="训练开始日期" width="390">
         </el-table-column>
-        <el-table-column prop="timeuse" label="训练时长" width="410">
+        <el-table-column prop="alth" label="训练算法" width="390">
         </el-table-column>
         <el-table-column label="模型操作" width="170">
           <el-button type="success" icon="el-icon-check" circle title="选用"></el-button>
-          <el-button type="info" icon="el-icon-info" circle title="详情"></el-button>
+          <el-button type="info" icon="el-icon-info" circle title="详情" @click="toinfo()"></el-button>
           <el-button type="danger" icon="el-icon-delete" circle title="删除"></el-button>
         </el-table-column>
       </el-table>
@@ -83,55 +82,38 @@
       title="训练集设置"
       width="30%"
     >
-      <div class="submit-font">训练图片集</div>
-      <upload style="margin-bottom: 20px;"/>
-      <div class="submit-font">训练标注文件（xml格式）</div>
-      <upload style="margin-bottom: 20px;"/>
-      <div class="submit-font">参数设置</div>
-      <div>
-        <div class="propset">
-          类别设置：
-          <el-tag
-            v-for="(tag, index) in dynamicTags"
-            :key="index"
-            class="mx-1"
-            closable
-            :disable-transitions="false"
-            @close="handleTagClose(index)"
-          >
-            {{ tag }}
-          </el-tag>
-          <el-input
-            v-if="inputVisible"
-            ref="InputRef"
-            v-model="inputValue"
-            class="ml-1 w-20"
-            size="small"
-            @keyup.enter="handleInputConfirm()"
-            @blur="handleInputConfirm()"
-          />
-          <el-button v-else class="button-new-tag ml-1" size="small" @click="showInput()">
-            + 新类别
-          </el-button>
-        </div>
-        <div class="propset">
-          训练周期设置：
-          <el-input v-model="circleinput" placeholder="请输入周期" clearable style="width: 50%;"></el-input>
-        </div>
-        <div class="propset">
-          预训练模型选择：
-          <el-dropdown @command="handlecommand">
-            <el-button type="primary">
-              {{modelselect}}&nbsp;&nbsp;<i class="el-icon-bottom"></i>
-            </el-button>
-            <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item command="YOLOX">YOLOX</el-dropdown-item>
-                <el-dropdown-item command="BorderDet">BorderDet</el-dropdown-item>
-              </el-dropdown-menu>
-            </template>
-          </el-dropdown>
-        </div>
+      <div class="form-data">
+        <el-form id="createData" :model="form" label-width="120px">
+          <el-form-item label="图像集选择:">
+            <el-select v-model="form.name" placeholder="请选择图像集">
+              <el-option label="图像集一" value="shanghai" />
+              <el-option label="图像集二" value="beijing" />
+              <el-option label="图像集三" value="beijing" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="标注集选择:">
+            <el-select v-model="form.region" placeholder="请选择标注集">
+              <el-option label="标注集一" value="shanghai" />
+              <el-option label="标注集二" value="beijing" />
+              <el-option label="标注集三" value="beijing" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="是否数据增强:">
+            <el-switch v-model="form.enhance" />
+          </el-form-item>
+          <el-form-item label="训练周期设置:">
+            <el-input v-model="form.delivery" />
+          </el-form-item>
+          <el-form-item label="训练模型选择:">
+            <el-select v-model="form.name" placeholder="请选择预训练模型">
+              <el-option label="YOLOX" value="shanghai" />
+              <el-option label="BorderDet" value="beijing" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="训练备注:">
+            <el-input v-model="form.note" type="textarea" />
+          </el-form-item>
+        </el-form>
       </div>
       <template #footer>
         <span>
@@ -150,8 +132,20 @@ import upload from '../views/Upload.vue'
 export default {
   name: "NewModel",
   components: {upload},
+  data() {
+    return {
+      form: {
+        name: "",
+        region: '',
+        delivery: '',
+        enhance: false,
+        desc: '',
+        note: '',
+      },
+    }
+  },
   setup() {
-    const dialogVisible = ref(true)
+    const dialogVisible = ref(false)
     const inputValue = ref('')
     const dynamicTags = ref([])
     const inputVisible = ref(false)
@@ -205,28 +199,35 @@ export default {
           id: "大物体",
           date: "96",
         },
+        {
+          id: "总体精度",
+          date: "98",
+        },
       ],
       tableData3: [
         {
           id: "模型1",
           date: " 2022.04.22 16:02",
-          timeuse: "1h",
+          althm: "YOLOX",
         },
         {
           id: "模型2",
           date: " 2022.04.23 16:02",
-          timeuse: "2h",
+          althm: "BorderDet",
         },
         {
           id: "模型3",
           date: " 2022.04.24 16:02",
-          timeuse: "3h",
+          althm: "YOLOX",
         },
       ],
     };
   },
 
   methods: {
+    toinfo() {
+      this.$router.push('/ad');
+    },
     handlecommand(command) {
       this.modelselect = command
       console.log(this.modelselect);
@@ -275,5 +276,13 @@ export default {
   }
   .w-20 {
     width: 20%;
+  }
+  .form-data {
+    background-color: #f8fbf4;
+    width: 80%;
+
+  }
+  #createData :deep(.el-form-item__label) {
+    font-size: 16px;
   }
 </style>

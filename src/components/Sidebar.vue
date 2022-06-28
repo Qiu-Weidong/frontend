@@ -56,10 +56,10 @@ export default {
                 index: "1",
                 title: "前期模型训练",
                 subs: [
-                    { index: '/newmodel1', title: '数据采集'},
-                    { index: '/newmodel2', title: '标注工作'},
+                    { index: '/datacollection', title: '数据采集'},
+                    { index: '/xmlcollection', title: '标注工作'},
                     { index: '/newmodel', title: '训练模型选择' },
-                    { index: '/newmodel4', title: '模型训练及可视化' }
+                    { index: '/ad', title: '模型介绍' }
                 ]
             },
 
