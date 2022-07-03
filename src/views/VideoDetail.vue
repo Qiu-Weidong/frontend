@@ -9,9 +9,9 @@
       你的浏览器不支持Video标签
     </video>
     </el-dialog>
-    <el-row>
+    <!-- <el-row>
       <el-button @click="multi">下载视频</el-button>
-    </el-row>
+    </el-row> -->
 
     <el-row>
       <el-col :span="16">

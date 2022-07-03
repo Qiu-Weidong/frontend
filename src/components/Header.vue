@@ -5,7 +5,7 @@
             <i v-if="!collapse" class="el-icon-s-fold"></i>
             <i v-else class="el-icon-s-unfold"></i>
         </div>
-        <div class="logo">空间定位系统</div>
+        <div class="logo">候车室特定设备设施空间定位系统</div>
         <div class="header-right">
             <div class="header-user-con">
                 <!-- 消息中心 -->
@@ -105,7 +105,7 @@ export default {
 }
 .header .logo {
     float: left;
-    width: 250px;
+    width: 350px;
     line-height: 70px;
 }
 .header-right {

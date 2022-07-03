@@ -73,6 +73,13 @@ const routes = [
                     title: "CCTV"
                 },
                 component: () => import("../views/CCTVMulti.vue")
+            },{
+                path: "/cctvlist",
+                name: "CCTVList",
+                meta: {
+                    title: "历史数据"
+                },
+                component: () => import("../views/CCTVList.vue")
             }, {
                 path: "/videodetail",
                 name: "VideoDetail",

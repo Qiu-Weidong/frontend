@@ -1,10 +1,10 @@
 <template>
   <div>
     <el-row>
-      <el-button @click="multi">全频显示</el-button>
+      <el-button @click="multi">全屏显示</el-button>
     </el-row>
 
-    <!-- 分频显示的视频 -->
+    <!-- 分屏显示的视频 -->
     <el-row :gutter="20">
       <el-col :span="12">
         <el-raw>
@@ -200,7 +200,7 @@ export default {
       this.$router.push("/CCTV");
     },
     more() {
-      this.$router.push("/VideoList");
+      this.$router.push("/CCTVList");
     },
   },
 };

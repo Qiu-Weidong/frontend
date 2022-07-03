@@ -40,7 +40,7 @@
         </el-select>
       </el-col>
        <el-col :span="6">
-        <el-button @click="multi">分频显示</el-button>
+        <el-button @click="multi">分屏显示</el-button>
       </el-col>
     </el-row> -->
 
