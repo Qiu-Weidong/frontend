@@ -225,73 +225,73 @@ export default {
       tableData1: [
         {
           id: "椅子",
-          date: "90",
+          date: "0.90685",
         },
         {
           id: "花盆",
-          date: "91",
+          date: "0.66884",
         },
         {
           id: "广告牌",
-          date: "86",
+          date: "0.94353",
         },
         {
           id: "充电箱",
-          date: "92",
+          date: "0.92377",
         },
       ],
       tableData2: [
         {
           id: "小物体",
-          date: "88",
+          date: "0.75150",
         },
         {
           id: "中物体",
-          date: "92",
+          date: "0.93077",
         },
         {
           id: "大物体",
-          date: "96",
+          date: "0.99703",
         },
         {
           id: "总体精度",
-          date: "98",
+          date: "0.86075",
         },
       ],
       tableData1_yolox: [
         {
           id: "椅子",
-          date: "90",
+          date: "0.9091",
         },
         {
           id: "花盆",
-          date: "91",
+          date: "0.8776",
         },
         {
           id: "广告牌",
-          date: "86",
+          date: "0.9091",
         },
         {
           id: "充电箱",
-          date: "92",
+          date: "1.0000",
         },
       ],
       tableData2_yolox: [
         {
           id: "小物体",
-          date: "88",
+          date: "0.8012",
         },
         {
           id: "中物体",
-          date: "92",
+          date: "0.9407",
         },
         {
           id: "大物体",
-          date: "96",
+          date: "0.9605",
         },
         {
           id: "总体精度",
-          date: "98",
+          date: "0.9239",
         },
       ],
       adverimg: [

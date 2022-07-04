@@ -1,76 +1,59 @@
 <template>
   <div style="padding-left: 20px;padding-top: 20px">
-    <el-row>
-      <div class="title">
-        标注工作
-      </div>
-    </el-row>
-    <div class="form-data">
-      <img src="../assets/img/Border-rec.png" alt="" style="width: 100%; height: 400px;"/>
-      <div class="detail_title">
-        {{title}}
-      </div>
-      <div v-html="content" class="detail_content"></div>
-      <el-form v-if="false" id="createData" :model="form" label-width="120px">
-        <el-form-item label="标注集名称:">
-          <el-input v-model="form.name" />
-        </el-form-item>
-        <el-form-item label="标注类别:">
-          <el-tag
-            v-for="(tag, index) in dynamicTags"
-            :key="index"
-            class="mx-1"
-            closable
-            :disable-transitions="false"
-            @close="handleTagClose(index)"
-          >
-            {{ tag }}
-          </el-tag>
-          <el-input
-            v-if="inputVisible"
-            ref="InputRef"
-            v-model="inputValue"
-            class="ml-1 w-20"
-            size="small"
-            @keyup.enter="handleInputConfirm()"
-            @blur="handleInputConfirm()"
-          />
-          <el-button v-else class="button-new-tag ml-1" size="small" @click="showInput()">
-            + 新类别
-          </el-button>
-        </el-form-item>
-        <el-form-item label="标注集描述:">
-          <el-input v-model="form.desc" type="textarea" />
-        </el-form-item>
-        <el-form-item label="标注文件上传:">
-          <upload style="margin-bottom: 20px;"/>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="onSubmit">提交</el-button>
-          <el-button>取消</el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-    <el-row>
-      <el-col :span="6">
-        <div style="width: 200px; margin-top: 20px; font-size: 22px; font-weight: 600">
-          标注集列表
+    <div style="display: inline-block; width: 75%;">
+      <el-row>
+        <div class="title">
+          标注工作
         </div>
-      </el-col>
-    </el-row>
-    <el-row style="margin-top: 20px">
-      <el-table :data="tableData3" stripe border style="width: 100%; font-size: 18px;">
-        <el-table-column prop="id" label="训练集名称" width="408">
-        </el-table-column>
-        <el-table-column prop="date" label="建立日期" width="408">
-        </el-table-column>
-        <el-table-column label="模型操作" width="170">
-          <el-button type="success" icon="el-icon-check" circle title="选用"></el-button>
-          <el-button type="info" icon="el-icon-info" circle title="详情"></el-button>
-          <el-button type="danger" icon="el-icon-delete" circle title="删除"></el-button>
-        </el-table-column>
-      </el-table>
-    </el-row>
+      </el-row>
+      <div class="test-bg">
+        <div class="detail_title" id="item1">
+          {{title1}}
+        </div>
+        <div v-html="content1" class="detail_content"></div>
+        <div class="detail_title" id="item2">
+          {{title3}}
+        </div>
+        <img src="../assets/img/Border-rec.png" alt="" style="width: 100%; height: 500px; margin-top: 10px; margin-bottom: 10px;"/>
+        <div v-html="content3" class="detail_content"></div>
+        <div class="detail_title" id="item3">
+          {{title2}}
+        </div>
+        <div v-html="content2" class="detail_content"></div>
+        <video
+          id="mse"
+          autoplay="true"
+          playsinline
+          controls="controls"
+          style="width: 100%; margin-top: 10px; margin-bottom: 10px;"
+        >
+          <source src="../assets/img/tag_display.mp4" type="video/mp4" />
+          你的浏览器不支持Video标签
+        </video>
+      </div>
+      
+    </div>
+    <div class="side_nav" id="side_test_bar">
+      <div :class="whether ? 'isFixed' : ''">
+        <h3 class="mb-2" style="margin-bottom: 10px;">内容导航</h3>
+        <el-menu
+          default-active="1"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose"
+        >
+          <el-menu-item index="1" @click="topartern(1)">
+            <span>标注工作概述</span>
+          </el-menu-item>
+          <el-menu-item index="2" @click="topartern(2)">
+            <span>标注工作创新</span>
+          </el-menu-item>
+          <el-menu-item index="3" @click="topartern(3)">
+            <span>标注工作演示</span>
+          </el-menu-item>
+        </el-menu>
+      </div> 
+    </div>
   </div>
 </template>
 
@@ -83,14 +66,19 @@ export default {
   components: {upload},
   data() {
     return {
+      whether: false,
       form: {
         name: "",
         region: '',
         delivery: false,
         desc: '',
       },
-      title:'特别的标注方式带来更方便快速的定位算法',
-      content: '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目标注工作针对椅子、花盆、广告牌、充电箱四大类作标注工作，训练目标检测模型来检测这四类物体的位置，从而通过三位定位算法进行真实世界定位。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目的标注工作对椅子边上的椅子支架进行标注，使椅子支架成为检测椅子的目标。这样做既使得标注框所包含的非目标信息减少，又更加方面确定目标物体的角点，从而目标定位算法可以使用角点去确定目标物体的真实世界坐标。既可以减少背景信息的干扰，又可以方便项目后续对于目标的定位操作。</p>',
+      title1:'标注工作概述',
+      content1: '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目标注工作针对椅子、花盆、广告牌、充电箱四大类作标注工作，训练目标检测模型来检测这四类物体的位置，从而通过三维定位算法进行真实世界定位。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标注时，尽可能地使得标注框的边缘与目标物体边缘对齐，在保证标注框语义精确度的情况下，使标注框包含尽可能少的无效背景信息，提高模型的精确度。</p>',
+      title2:'标注工作演示',
+      content2: '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目标注工作视频演示如下所示。</p>',
+      title3:'标注工作创新',
+      content3: '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目的标注工作对椅子边上的椅子支架进行标注，使椅子支架成为检测椅子的目标。这样做既使得标注框所包含的非目标信息减少，又更加方面确定目标物体的角点，从而目标定位算法可以使用角点去确定目标物体的真实世界坐标。既可以减少背景信息的干扰，又可以方便项目后续对于目标的定位操作。</p>',
     }
   },
   setup() {
@@ -160,6 +148,19 @@ export default {
   },
 
   methods: {
+    topartern(index) {
+      console.log("#item"+index);
+      document.querySelector("#item"+index).scrollIntoView({ behavior: "smooth" });
+    },
+    handleScroll () {
+        //计算滚动条位置
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      //计算绑定div位置
+      var offsetTop = document.querySelector('#side_test_bar').offsetTop;
+      //进行比较设置位置fixed
+      this.whether = scrollTop < offsetTop;
+      console.log(this.whether);
+    },
     handlecommand(command) {
       this.modelselect = command
       console.log(this.modelselect);
@@ -184,6 +185,12 @@ export default {
     handleTagClose(index) {
       this.dynamicTags.splice(index, 1)
     },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll, true);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
 };
 </script>
@@ -223,16 +230,38 @@ export default {
     width: 20%;
   }
   .detail_title {
-    text-align: center;
     font-size: 30px;
     font-weight: 800;
     color: black;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
   }
   .detail_content {
     font-size: 22px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .test-bg {
+    background-color:#eae9e9;
+    margin-left: 50px;
+    margin-right: 300px;
+    padding: 0px 20px;
+    width: 100%;
+  }
+  .detail_content_sub {
+    font-size: 22px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  .side_nav {
+    float:right;
+    width: 15%;
+    margin-top: 50px;
+  }
+  .isFixed {
+    position: fixed;
+    top: 200px;
+    z-index: 1000;
   }
 </style>

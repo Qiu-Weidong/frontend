@@ -58,7 +58,6 @@ export default {
                 subs: [
                     { index: '/datacollection', title: '数据采集'},
                     { index: '/xmlcollection', title: '标注工作'},
-                    { index: '/newmodel', title: '训练模型选择' },
                     { index: '/ad', title: '模型介绍' }
                 ]
             },

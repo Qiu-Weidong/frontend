@@ -180,13 +180,6 @@ const routes = [
                 },
                 component: () => import (/* webpackChunkName: "editor" */ '../views/Editor.vue')
             }, {
-                path: '/newmodel',
-                name: 'NewModel',
-                meta: {
-                    title: '训练新的模型'
-                },
-                component: () => import (/* webpackChunkName: "editor" */ '../views/NewModel.vue')
-            }, {
                 path: '/videotest',
                 name: 'VideoTest',
                 meta: {
@@ -197,7 +190,7 @@ const routes = [
                 path: '/ad',
                 name: 'Advertisement',
                 meta: {
-                    title: '产品介绍'
+                    title: '模型介绍'
                 },
                 component: () => import("../views/Advertisement.vue")
             }, {
